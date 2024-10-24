@@ -53,6 +53,7 @@ export function handleAuctionBid(event: AuctionBid): void {
   bid.bidder = bidder.id;
   bid.amount = auction.amount;
   bid.noun = auction.noun;
+  bid.txHash = event.transaction.hash;
   bid.txIndex = event.transaction.index;
   bid.blockNumber = event.block.number;
   bid.blockTimestamp = event.block.timestamp;
@@ -144,6 +145,7 @@ export function handleAuctionBidV1(event: AuctionBid): void {
   bid.bidder = bidder.id;
   bid.amount = auction.amount;
   bid.noun = auction.noun;
+  bid.txHash = event.transaction.hash;
   bid.txIndex = event.transaction.index;
   bid.blockNumber = event.block.number;
   bid.blockTimestamp = event.block.timestamp;

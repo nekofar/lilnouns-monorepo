@@ -91,6 +91,9 @@ type Bid @entity {
   "Block number of the bid"
   blockNumber: BigInt!
 
+  "Transaction hash for the bid"
+  txHash: Bytes!
+
   "Index of transaction within block"
   txIndex: BigInt!
 
