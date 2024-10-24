@@ -269,11 +269,17 @@ type Proposal @entity {
   "The timestamp when this proposal was canceled"
   canceledTimestamp: BigInt
 
+  "The transaction hash when the proposal was canceled"
+  canceledTransactionHash: Bytes
+
   "The block number at which this proposal was executed"
   executedBlock: BigInt
 
   "The timestamp when this proposal was executed"
   executedTimestamp: BigInt
+
+  "The transaction hash when the proposal was executed"
+  executedTransactionHash: Bytes
 
   "The block number at which this proposal was vetoed"
   vetoedBlock: BigInt
@@ -281,11 +287,17 @@ type Proposal @entity {
   "The timestamp when this proposal was vetoed"
   vetoedTimestamp: BigInt
 
+  "The transaction hash when the proposal was vetoed"
+  vetoedTransactionHash: Bytes
+
   "The block number at which this proposal was queued"
   queuedBlock: BigInt
 
   "The timestamp when this proposal was queued"
   queuedTimestamp: BigInt
+
+  "The transaction hash when the proposal was queued"
+  queuedTransactionHash: Bytes
 }
 
 type Vote @entity {
@@ -321,6 +333,9 @@ type Vote @entity {
 
   "The timestamp of the block the vote is in"
   blockTimestamp: BigInt!
+
+  "The transaction hash of the vote"
+  transactionHash: Bytes!
 }
 
 type Governance @entity {
