@@ -2,7 +2,7 @@ import { PNGCollectionEncoder } from '@lilnounsdao/sdk';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { readPngImage } from './utils';
-import { palette } from './image-data.json';
+import { palette } from '../src/image-data.json';
 
 /**
  * @notice creates an additional art json file. it assumes it's not the first one.
