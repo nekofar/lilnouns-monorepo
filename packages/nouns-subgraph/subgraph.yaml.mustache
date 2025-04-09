@@ -154,6 +154,27 @@ dataSources:
         - event: MinQuorumVotesBPSSet(uint16,uint16)
           handler: handleMinQuorumVotesBPSSet
         - event: MaxQuorumVotesBPSSet(uint16,uint16)
-          handler: handleMaxQuorumVotesBPSSet        
+          handler: handleMaxQuorumVotesBPSSet
         - event: QuorumCoefficientSet(uint32,uint32)
           handler: handleQuorumCoefficientSet
+
+  - kind: ethereum/contract
+    name: LilNounsData
+    network: {{network}}
+    source:
+      address: '{{nounsDAOData.address}}'
+      abi: LilNounsData
+      startBlock: {{nounsDAOData.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/lil-nouns-data.ts
+      entities:
+        - ProposalFeedback
+      abis:
+        - name: LilNounsData
+          file: ./abis/LilNounsData.json
+      eventHandlers:
+        - event: FeedbackSent(indexed address,uint256,uint8,string)
+          handler: handleFeedbackSent
