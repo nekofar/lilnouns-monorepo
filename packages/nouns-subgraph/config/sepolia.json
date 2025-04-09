@@ -19,5 +19,9 @@
   "lilVRGDA": {
     "address": "0x0d8c4d18765ab8808ab6cee4d7a760e8b93ab20c",
     "startBlock": 5994946
+  },
+  "nounsDAOData": {
+    "address": "0x2019c935757866b0F5c72A34D5B0F1035ff06e55",
+    "startBlock": 8083857
   }
 }
