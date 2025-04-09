@@ -3,6 +3,7 @@ import {
   Account,
   Delegate,
   Proposal,
+  ProposalFeedback,
   Governance,
   Vote,
   DynamicQuorumParams,
@@ -153,4 +154,12 @@ export function getOrCreateDynamicQuorumParams(block: BigInt | null = null): Dyn
   }
 
   return params as DynamicQuorumParams;
+}
+
+export function getOrCreateProposalFeedback(id: string): ProposalFeedback {
+  let feedback = ProposalFeedback.load(id);
+  if (feedback == null) {
+    feedback = new ProposalFeedback(id);
+  }
+  return feedback;
 }
